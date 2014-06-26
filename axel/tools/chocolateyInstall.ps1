@@ -28,7 +28,6 @@ Install-ChocolateyZipPackage "$packageName" "$url" "$(Split-Path -parent $MyInvo
   #Start-ChocolateyProcessAsAdmin 'STATEMENTS_TO_RUN' 'Optional_Application_If_Not_PowerShell' -validExitCodes $validExitCodes
   # add specific folders to the path - any executables found in the chocolatey package folder will already be on the path. This is used in addition to that or for cases when a native installer doesn't add things to the path.
   
- Install-ChocolateyPath $env:systemdrive\chocolatey\lib\axel.2.4 'User' # Machine will assert administrative rights
   # add specific files as shortcuts to the desktop
   #$target = Join-Path $MyInvocation.MyCommand.Definition "$($packageName).exe"
   #Install-ChocolateyDesktopLink $target
