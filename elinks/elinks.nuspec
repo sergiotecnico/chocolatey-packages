@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ??? doesn?t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+   <id>elinks</id>
+   <title>ELinks - Full-Featured Text WWW Browser</title>
+   <version>0.12.3</version>
+   <authors>elinks</authors>
+   <owners>ghuntley</owners>
+   <summary>ELinks is an advanced and well-established feature-rich text mode web (HTTP/FTP/..) browser. ELinks can render both frames and tables, is highly customizable and can be extended via Lua or Guile scripts. It is quite portable and runs on a variety of platforms.</summary>
+   <description>ELinks is a program for browsing the web in text mode. The goal of the project has from the beginning been to provide a feature-rich text mode browser with an open patches/features inclusion policy and active development. One of these features is that ELinks includes Links-Lua which adds scripting capabilities to ELinks. ELinks was forked from the original Links browser written by Mikulas Patocka. It is in no way associated with Twibright Labs and their Links version. Please read to the history page for more information about the various Links versions and forks. Over the years many people have contributed to making ELinks what it is today.</description>
+   <projectUrl>https://github.com/ghuntley/chocolatey-packages</projectUrl>
+   <tags>elinks web console browser http ftp text-only</tags>
+   <copyright></copyright>
+   <licenseUrl>http://elinks.or.cz/COPYING</licenseUrl>
+   <requireLicenseAcceptance>false</requireLicenseAcceptance>
+   <iconUrl>http://imgur.com/Tr0BJgf</iconUrl>
+   <dependencies>
+     <dependency id="spotify" version="0.9.8.296" />
+   </dependencies>
+   <releaseNotes>ELinks 0.12pre3
+	   ===============
+   
+	   This is the third prerelease for ELinks 0.12.
+   
+	   This release of ELinks is mostly licensed under version 2 of the GNU
+	   General Public License.  More permissive licences apply to some parts
+	   of it, and there is also one test file under the GNU Free Documentation
+	   License; please see COPYING for the list.
+   
+	   User-visible changes since ELinks 0.12pre2
+	   ------------------------------------------
+   
+	   Incompatibilities:
+   
+	   * bug 1060: Regexp searching now requires the TRE library.
+	   * lzma disabled by default. It's rarely used and doesn't build with new xz.
+   
+	   Fixed crashes:
+   
+	   * critical: Fix double-free crash if EOF immediately follows /MAP>.
+  (Also fixed in ELinks 0.11.6.)
+  * critical: Fix assertion failure if IMG/@usemap refers to a different
+  file.
+  * critical bug 1053: Fix crash if a download finishes after ELinks has
+  closed the terminal from which the download was started.  (Also fixed
+  in ELinks 0.11.6.)
+  * critical bug 1067: Fixed a crash in the RSS parser that ``configure
+  --enable-html-highlight'' enables.  (ELinks 0.12pre1 was the first
+  release that supported RSS at all.)
+  * Don't crash when the search-toggle-regex action is used and no regular
+  expression support is compiled in.
+
+  Locales, charsets, and terminals:
+
+  * major bug 1004: Ignore locales when comparing HTML element names and
+  similar strings, so e.g. ``title'' matches ``TITLE'' even in the
+  Turkish locale.  (Also fixed in ELinks 0.11.6.)
+  * bug 153: Preserve Unicode characters in XBEL bookmark files.
+  However, Unicode in URIs (really IRIs) does not work reliably yet;
+  this is being tracked as bug 1066.
+  * bug 885: Convert xterm titles to ISO-8859-1 by default, but add an
+  option to disable this.  When removing control characters from a
+  title, note the charset.  Don't truncate titles to the width of the
+  terminal.
+  * bug 1061: Correctly truncate UTF-8 titles in the tab bar.
+  * minor: Clicking a link with the mouse activates that link, rather
+  than the one selected with move-cursor-* actions.  (Also fixed in
+  ELinks 0.11.6.)
+  * enhancement: Updated ISO 8859-7, ISO 8859-16, KOI8-R, and MacRoman.
+
+  Scripting:
+
+  * Perl scripts can use modules that dynamically load C libraries, like
+  XML::LibXML::SAX does.
+  * bug 1069: ELinks didn't report ECMAScript errors, even if the
+  ecmascript.error_reporting option was turned on.  (This was a new
+  bug in ELinks 0.12pre2.)
+
+  Everything else:
+
+  * Preserve newlines in hidden input fields, and submit them as CRLF.
+  Previously, they could turn into spaces or disappear entirely.
+  * bug 1068: ELinks used to display a blank or truncated page if an
+  HTTP/1.1 server sent a compressed body with incorrect Content-Length.
+  That has now been fixed, and a new option (protocol.http.compression)
+  has been added.
+  * minor bug 761: When reading bookmarks from an XBEL file, distinguish
+  attribute names from attribute values.
+  * build bug 1047: Attempt to make inline functions satisfy C99 6.7.4p3
+  so that ELinks can be built on OpenSolaris.  (Also fixed in ELinks
+  0.11.6.)
+
+  Authors since ELinks 0.12pre2
+  -----------------------------
+
+  Kalle Olavi Niemitalo
+  Kamil Dudka
+  M. Vefa Bicakci
+  Miciah Dashiel Butler Masters
+  Peter Collingbourne
+  Petr Baudis
+  Witold Filipczyk
+
+  Known regressions
+  -----------------
+
+  ELinks 0.12pre3 has the following bugs that were not in 0.11.6.
+  These should be fixed before the 0.12.0 release:
+
+  * Bug 765 - Opening a new tab can ask about the document of the
+  previous tab
+  * Bug 943 - Crash: BFU points to a freed struct type_query
+
+  There is also one other bug scheduled for 0.12.0:
+
+  * Bug 771 - Infinite loop is not well handled
+
+  These same bugs were listed in the 0.12pre2 announcement already.  :-(
+</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
