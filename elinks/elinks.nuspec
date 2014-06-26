@@ -4,7 +4,7 @@
   <metadata>
    <id>elinks</id>
    <title>ELinks - Full-Featured Text WWW Browser</title>
-   <version>0.12.3</version>
+   <version>0.12.3.1</version>
    <authors>elinks</authors>
    <owners>ghuntley</owners>
    <summary>ELinks is an advanced and well-established feature-rich text mode web (HTTP/FTP/..) browser. ELinks can render both frames and tables, is highly customizable and can be extended via Lua or Guile scripts. It is quite portable and runs on a variety of platforms.</summary>
@@ -14,7 +14,7 @@
    <copyright></copyright>
    <licenseUrl>http://elinks.or.cz/COPYING</licenseUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-   <iconUrl>http://imgur.com/Tr0BJgf</iconUrl>
+   <iconUrl>http://i.imgur.com/Tr0BJgf.png</iconUrl>
    <dependencies>
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
