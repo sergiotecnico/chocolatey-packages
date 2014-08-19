@@ -18,7 +18,10 @@
    <dependencies>
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
-   <releaseNotes>Sporting better albums, more reliable Toasts and the hotkeys that keep you coming back for more Spotify music, this is the best version of Toastify yet!</releaseNotes>
+   <releaseNotes>- add option to suppress the "launch Spotify?" dialog.
+- recompile so that hopefully Toastify is no longer marked as a generic trojan by Kasperspky
+- Handled a bunch of edge cases in the Spotify album art retriever so you should be seeing more album art!
+- There is now an option to control only Spotify's volume through the hotkeys. This doesn't change the volume in the client (Spotify doesn't support that) but it will change the Windows Audio Mixer volume for Spotify, achieving a similar result. By default this is off to avoid potential confusion from users who are adjusting the volume of Spotify through Toastify and the client/system and don't know about the mixer.</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
