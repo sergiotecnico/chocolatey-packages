@@ -2,22 +2,25 @@
 
 $packageName = 'toastify' # arbitrary name for the package, used in messages
 $installerType = 'EXE' #only one of these: exe, msi, msu
-$url = 'https://toastify.codeplex.com/downloads/get/888678' # download url
-$url64 = 'https://toastify.codeplex.com/downloads/get/888678' # 64bit URL here or remove - if installer decides, then use $url
+$url = 'https://toastify.codeplex.com/downloads/get/960495' # download url
+$url64 = 'https://toastify.codeplex.com/downloads/get/960495' # 64bit URL here or remove - if installer decides, then use $url
 $silentArgs = '/S' # "/s /S /q /Q /quiet /silent /SILENT /VERYSILENT" # try any of these to get the silent installer #msi is always /quiet
 $validExitCodes = @(0) #please insert other valid exit codes here, exit codes for ms http://msdn.microsoft.com/en-us/library/aa368542(VS.85).aspx
 
 # main helpers - these have error handling tucked into them already
-# installer, will assert administrative rights
+# installer, will assert administrative rights
+
 # if removing $url64, please remove from here
 Install-ChocolateyPackage "$packageName" "$installerType" "$silentArgs" "$url" "$url64"  -validExitCodes $validExitCodes
-# download and unpack a zip file
+# download and unpack a zip file
+
 # if removing $url64, please remove from here
 #Install-ChocolateyZipPackage "$packageName" "$url" "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" "$url64"
 
 #try { #error handling is only necessary if you need to do anything in addition to/instead of the main helpers
   # other helpers - using any of these means you want to uncomment the error handling up top and at bottom.
-  # downloader that the main helpers use to download items
+  # downloader that the main helpers use to download items
+
   # if removing $url64, please remove from here
   #Get-ChocolateyWebFile "$packageName" 'DOWNLOAD_TO_FILE_FULL_PATH' "$url" "$url64"
   # installer, will assert administrative rights - used by Install-ChocolateyPackage
