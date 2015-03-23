@@ -14,7 +14,7 @@
    <copyright></copyright>
    <licenseUrl>https://toastify.codeplex.com/license</licenseUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-   <iconUrl>http://i.imgur.com/1saQmn2.png</iconUrl>
+   <iconUrl>https://cdn.rawgit.com/TomOne/various/ca0a5f1872bc0fb738e04e2d4d0e505505d23353/toastify.png</iconUrl>
    <dependencies>
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
