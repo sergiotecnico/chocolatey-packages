@@ -4,7 +4,7 @@
   <metadata>
    <id>toastify</id>
    <title>toastify</title>
-   <version>1.7.0</version>
+   <version>1.7.3</version>
    <authors>Geoffrey Huntley</authors>
    <owners>ghuntley</owners>
    <summary>Toastify adds some missing functionallity to the Spotify client.</summary>
@@ -14,14 +14,23 @@
    <copyright></copyright>
    <licenseUrl>https://toastify.codeplex.com/license</licenseUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-   <iconUrl>http://i.imgur.com/1saQmn2.png</iconUrl>
+   <iconUrl>https://cdn.rawgit.com/TomOne/various/ca0a5f1872bc0fb738e04e2d4d0e505505d23353/toastify.png</iconUrl>
    <dependencies>
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
-   <releaseNotes>- add option to suppress the "launch Spotify?" dialog.
-- recompile so that hopefully Toastify is no longer marked as a generic trojan by Kasperspky
-- Handled a bunch of edge cases in the Spotify album art retriever so you should be seeing more album art!
-- There is now an option to control only Spotify's volume through the hotkeys. This doesn't change the volume in the client (Spotify doesn't support that) but it will change the Windows Audio Mixer volume for Spotify, achieving a similar result. By default this is off to avoid potential confusion from users who are adjusting the volume of Spotify through Toastify and the client/system and don't know about the mixer.</releaseNotes>
+   <releaseNotes>
+    # Toastify 1.7.2
+
+    - Corrected version (bug #13508)
+    - Added support for Win key in hotkeys (thanks bwp11!)
+
+    # Toastify 1.7.1
+
+    - Support for Spotify v1
+      - This support is much more invasive than previous versions due to changes made by Spotify (primarily the removal of the Artist / Track from the title bar). It has some benefits, but also comes with some down sides (we must restart Spotify when launching Toastify). There will also be bugs.
+    - Support for Toast positioning on high-DPI screens, you may need to re-position your Toasts
+
+  </releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
