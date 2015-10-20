@@ -1,7 +1,7 @@
 ﻿$packageName = 'toastify'
 $installerType = 'EXE' 
-$url = 'https://toastify.codeplex.com/downloads/get/1440002' 
-$url64 = 'https://toastify.codeplex.com/downloads/get/1440002'
+$url = 'https://toastify.codeplex.com/downloads/get/1480805' 
+$url64 = 'https://toastify.codeplex.com/downloads/get/1480805'
 $silentArgs = '/S' 
 $validExitCodes = @(0)
 

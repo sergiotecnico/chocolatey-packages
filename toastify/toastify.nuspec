@@ -4,7 +4,7 @@
   <metadata>
    <id>toastify</id>
    <title>toastify</title>
-   <version>1.7.3</version>
+   <version>1.7.8</version>
    <authors>Geoffrey Huntley</authors>
    <owners>ghuntley</owners>
    <summary>Toastify adds some missing functionallity to the Spotify client.</summary>
@@ -19,15 +19,40 @@
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
    <releaseNotes>
-    # Toastify 1.7.2
+    # Toastify 1.7.8 - 26/8/2015
+	- Fixed toast stealing focus (thanks to everyone who reported this) 
+	- Fixed version constantly bugging to update
 
+	# Toastify 1.7.7 - 12/8/2015
+	- Fixed incorrect binaries pushed in 1.7.6 which caused the toasts to disappear on some devices
+
+	# Toastify 1.7.6 - 10/8/2015
+	- Support for extracting Artist / Song from the latest version of Spotify (thanks arosner3 and emptythecache!)
+	- Fixed empty toast during launch 
+	- Fixed fps drop (in at least one case) as per https://toastify.codeplex.com/discussions/641430
+
+	# Toastify 1.7.5 - 23/3/2015
+	- Experimental hotkeys for thumbs up and thumbs down (fixes a long standing request, #11693)
+	- 13363 - use regular - instead of Unicode dash for "artist - title" to help with some older bits of ASCII only software
+
+	# Toastify 1.7.4 - 22/3/2015
+	- Added a setting to minimize Spotify on launch 
+	- Feature Request 13516: Save current track to file (useful for scenarios such as piping the current playing track to Open Broadcaster Software etc.)
+	- Installer will now terminate any lingering ChromeDriver processes
+
+	# Toastify 1.7.3 - 20/3/2015
+	- Remove warning that hotkeys without a modifier are invalid (since they were, in fact, valid). Tracked under issue #13510
+	- More robust killing of Spotify (cleanly and eventually forcefully) when exiting Toastify
+	- Avoid potential for duplicate hotkey entries in the Settings list
+
+	
+	# Toastify 1.7.2
     - Corrected version (bug #13508)
     - Added support for Win key in hotkeys (thanks bwp11!)
 
     # Toastify 1.7.1
-
     - Support for Spotify v1
-      - This support is much more invasive than previous versions due to changes made by Spotify (primarily the removal of the Artist / Track from the title bar). It has some benefits, but also comes with some down sides (we must restart Spotify when launching Toastify). There will also be bugs.
+    - This support is much more invasive than previous versions due to changes made by Spotify (primarily the removal of the Artist / Track from the title bar). It has some benefits, but also comes with some down sides (we must restart Spotify when launching Toastify). There will also be bugs.
     - Support for Toast positioning on high-DPI screens, you may need to re-position your Toasts
 
   </releaseNotes>
