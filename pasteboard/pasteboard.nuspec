@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ??? doesn?t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+   <id>pasteboard</id>
+   <title>pasteboard - pbcopy and pbpaste for windows.</title>
+   <version>1.0.0</version>
+   <authors>Geoffrey Huntley</authors>
+   <owners>ghuntley</owners>
+   <summary>Your favourite OSX command line clipboard manipulation libraries `pbcopy` and `pbpaste`ported over to Windows.</summary>
+   <description>pbcopy copies the standard input and places it in the specified pasteboard. pbpaste copies the data from the pasteboard and writes it to the standard output. </description>
+   <projectUrl>https://github.com/ghuntley/pasteboard</projectUrl>
+   <tags>pbcopy pbpaste clipboard command-line osx pasteboard windows console</tags>
+   <copyright></copyright>
+   <licenseUrl>https://github.com/ghuntley/pasteboard/blob/master/LICENSE.md</licenseUrl>
+   <requireLicenseAcceptance>false</requireLicenseAcceptance>
+   <iconUrl>https://i.imgur.com/rVJVL3U.png</iconUrl>
+   <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
