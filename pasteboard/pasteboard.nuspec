@@ -4,7 +4,7 @@
   <metadata>
    <id>pasteboard</id>
    <title>pasteboard - pbcopy and pbpaste for windows.</title>
-   <version>1.0.0</version>
+   <version>1.1.0</version>
    <authors>Geoffrey Huntley</authors>
    <owners>ghuntley</owners>
    <summary>Your favourite OSX command line clipboard manipulation libraries `pbcopy` and `pbpaste`ported over to Windows.</summary>
@@ -15,7 +15,7 @@
    <licenseUrl>https://github.com/ghuntley/pasteboard/blob/master/LICENSE.md</licenseUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
    <iconUrl>https://i.imgur.com/rVJVL3U.png</iconUrl>
-   <releaseNotes></releaseNotes>
+   <releaseNotes>Added Windows 7 support.</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
