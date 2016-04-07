@@ -4,9 +4,9 @@
   <metadata>
    <id>toastify</id>
    <title>toastify</title>
-   <version>1.7.8</version>
+   <version>1.8.3</version>
    <authors>Geoffrey Huntley</authors>
-   <owners>ghuntley</owners>
+   <owners>ghuntley, slayerice09</owners>
    <summary>Toastify adds some missing functionallity to the Spotify client.</summary>
    <description>Toastify shows a popup, toast style, dialog on track change and it allows you to use global hot keys for Play/Pause, Next, Previous etc. Toastify is developed using C# and WPF.</description>
    <projectUrl>https://github.com/ghuntley/chocolatey-packages</projectUrl>
@@ -19,6 +19,20 @@
      <dependency id="spotify" version="0.9.8.296" />
    </dependencies>
    <releaseNotes>
+    # Toastify 1.8.3 - 10/3/2016
+    - BUG: Toastify was no longer minimizing Spotify on startup (when the setting was set) - thanks darrenshare!
+	- Exception handling cleanup
+
+	# Toastify 1.8.2 - 8/3/2016
+	- Fixed crash when clicking on toast (that should show Spotify)
+	
+	# Toastify 1.8.0 - 8/3/2016
+	- Toastify now loads album art again
+	- Toastify no longer causes Spotify to consume copious amounts of system resources (Spotify readded the current playing song to the title).
+	- - We lose full control of Spotify, such as thumbs up / down :(
+	- Added setting to allow you to keep your computer awake while Spotify is playing music
+	- We have started collecting anonymous usage stats - opt out in Settings.
+	
     # Toastify 1.7.8 - 26/8/2015
 	- Fixed toast stealing focus (thanks to everyone who reported this) 
 	- Fixed version constantly bugging to update
