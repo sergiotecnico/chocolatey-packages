@@ -9,7 +9,8 @@
    <owners>ghuntley, slayerice09</owners>
    <summary>Toastify adds some missing functionallity to the Spotify client.</summary>
    <description>Toastify shows a popup, toast style, dialog on track change and it allows you to use global hot keys for Play/Pause, Next, Previous etc. Toastify is developed using C# and WPF.</description>
-   <projectUrl>https://github.com/ghuntley/chocolatey-packages</projectUrl>
+   <projectUrl>https://toastify.codeplex.com/</projectUrl>
+   <packageSourceUrl>https://github.com/ghuntley/chocolatey-packages</packageSourceUrl>
    <tags>toastify spotify keyboard hotkeys</tags>
    <copyright></copyright>
    <licenseUrl>https://toastify.codeplex.com/license</licenseUrl>
