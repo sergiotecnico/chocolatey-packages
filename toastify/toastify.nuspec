@@ -4,22 +4,181 @@
   <metadata>
    <id>toastify</id>
    <title>toastify</title>
-   <version>1.8.3</version>
+   <version>1.11.2</version>
    <authors>Geoffrey Huntley</authors>
    <owners>ghuntley, slayerice09</owners>
    <summary>Toastify adds some missing functionallity to the Spotify client.</summary>
    <description>Toastify shows a popup, toast style, dialog on track change and it allows you to use global hot keys for Play/Pause, Next, Previous etc. Toastify is developed using C# and WPF.</description>
-   <projectUrl>https://toastify.codeplex.com/</projectUrl>
+   <projectUrl>https://github.com/aleab/toastify</projectUrl>
    <packageSourceUrl>https://github.com/ghuntley/chocolatey-packages</packageSourceUrl>
    <tags>toastify spotify keyboard hotkeys</tags>
    <copyright></copyright>
-   <licenseUrl>https://toastify.codeplex.com/license</licenseUrl>
+   <licenseUrl>https://github.com/aleab/toastify/</licenseUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
    <iconUrl>https://cdn.rawgit.com/TomOne/various/ca0a5f1872bc0fb738e04e2d4d0e505505d23353/toastify.png</iconUrl>
    <dependencies>
-     <dependency id="spotify" version="0.9.8.296" />
+     <dependency id="spotify" version="1.1.41.634" />
    </dependencies>
    <releaseNotes>
+	# Toastify v1.11.2 - 11/9/2019
+		- Fixed issue with API token refresh.
+		- Fixed major issue with the authorization flow (#110, #111, #118, #127).
+		- Fixed "paused" issue (#110).
+		- Fixed installer re-creating and moving the desktop icon.
+		- Fixed some more things and broke others, probably...
+
+		# Toastify v1.11.1 - 16/2/2019
+			- Removed the buggy Authentication window; the auth process now opens the default browser instead. This fixes issues #107 and #109.
+
+		# Toastify v1.11.0 - 14/2/2019
+			- Toastify can now use Spotify's Web API
+				- The use of the Web API is optional (enabled by default) and allows Toastify (provided the user has completed the authorization flow) to:
+					- Get more accurate information about the current song's title and artist(s)
+				- Fetch the current song's album art
+			- Known Issues
+				- The authorization may occasionally take quite some time (10-20 seconds), so certain features might be unavailable until the process completes.
+				- The toast may occasionally not update the current song if it's changed too frequently and/or too fast (e.g. when you "spam" the Next Song button).
+
+	# Toastify v1.10.14 - 19/9/2018
+		- Fixed a major issue with Toastify waiting indefinitely for Spotify at startup when the user has Spotify Premium.
+
+		# Toastify v1.10.13 - 16/9/2018
+			- Fixed an issue where the current song wasn't being updated in the toast when it was changed in Spotify while paused.
+			- Fixed an issue with song titles or artist names containing an hyphen (commit 88243da).
+			- Added Toastify Broadcaster, a WebSocket-based event broadcaster.
+			- NOTE: Toastify now needs .NET Framework 4.7.2 to run. The new installer should download and install it automatically; in case it doesn't, you can find it here.
+
+		# Toastify v1.10.12 - 3/9/2018
+			- Fixed major issue with hotkey settings not being loaded correctly (#93).
+			- Fixed issue with the Windows Key modifier never being set correctly.
+			- Fixed issue with Toastify directory in %LocalAppData% not being created (#94).
+
+		# Toastify v1.10.11 - 31/8/2018
+			- ❗️ Restored the toast using a temporary workaround to fetch the current song's info (#86).
+				- This workaround only allows us to fetch the current song's artist and title. The album art can't be updated; the song progress bar has been temporarily disabled.
+			- Added Stop hotkey (#88).
+			- Fixed an issue with the Store version of Spotify (#89).
+			- Improved the way Toastify checks if an hotkey is already in use.
+				- The user is now notified of an invalid hotkey as soon as it's changed instead of after it's been saved.
+			- Added automation properties to support screen readers (#76).
+
+		# Toastify v1.10.9 - 10/8/2018
+			- ❗️ Toastify should now start correctly with the latest version of Spotify (1.0.87.*)
+			- ❗️ Due to recent changes on Spotify's side, the toast notifications have been disabled (#86)
+				- Removed the Toast tab from the settings window
+				- Never show the toast on demand: the ShowToast global hotkey is still there but does nothing
+			- The installer and uninstaller have been changed slightly (see commit ee88029)
+			- Bug fixes (#71, #74, #75)
+
+		# Toastify v1.10.8 - 1/4/2018
+			- Fixed the "Launch on startup" setting still resetting to its default value after latest update (#52, #57)
+			- Fixed unexpected crash when trying to bind mouse buttons/wheel as hotkeys (#60)
+			- Toastify needs your feedback ❗️
+			- Would you like a Windows Store release of Toastify? Vote here.
+
+		# Toastify v1.10.7 - 31/3/2018
+			- Hotfixed auto-updater not working
+			- Hotfixed Changelog viewer not working as expected
+
+		# Toastify v1.10.5
+			- Added support for proxy configuration (#46)
+			- Added MWheelUp/MWheelDown to the allowed mouse buttons/actions for hotkeys (#47)
+			- Reduced minimum toast display time to 100ms (#51)
+			- Fixed certain saved hotkeys and settings reverting to their default values upon restart (#52, #55)
+			- Fixed saving of Top/Height when dragging the toast (#58)
+			- Implemented an auto-updater to automatically update Toastify when a new version is released (must be enabled in the settings first)
+			- Implemented a changelog viewer that will pop up the first time Toastify is launched after an update
+			- Minor bug fixes
+			- Acknowledgments
+				- Huge thanks to @trevtrevtrev for their availability to test out the software throughout the development of #46!
+				- Also thumbs up to @JohnnyCrazy for fixing #58! 👍
+
+		# Toastify v1.10.4 - 10/3/2018
+			- Automatically disable Analytics if connection to Google Analytics is not available (#41).
+			- Fixed toast default position for scale factors different from 100%.
+			- Fixed error when changing the "FadeOut Time" to a value outside the range of allowed values (#38).
+			- Added a couple of command-line arguments (see a2bdc95).
+			- Thanks to @hartmark for pull requests #39 and #40! 👍
+
+		# Toastify v1.10.3 - 7/3/2018
+			- Fixed critical bug introduced by the latest version of Spotify v1.0.75.483.g7ff4a0dc (#31).
+				- Unfortunately, some actions and functionalities had to be removed in the process because of how things changed in Spotify itself. The most notable removed feature is the possibility of controlling Spotify's in-app volume. See #31, 9cb83d1 and 0047a22 for details.
+			- Fixed critical bug that prevented people with a broken(*) config file from launching the app (#30).
+				- (*) broken = a config file that was missing certain settings; this caused these settings to be deserialized with their type default value, which in some cases resulted in an invalid value being passed to certain UI controls.
+			- Removed unnecessary modifier requirement on hotkeys (#32).
+			- Added the possibility to use mouse side buttons (XButton1/Mouse4 and XButton2/Mouse5) in hotkey combinations.
+			- Toastify will now pass any command line argument to Spotify when launching it.
+
+		# Toastify v1.10.2 - 28/1/2018
+			- Added support for multi-screen configurations (#28).
+
+		# Toastify v1.10.1 - 15/1/2018
+			- Toastify will now show a live preview of the Toast when editing the settings (#19).
+			- The toast will now consistently show the message "[UNKNOW TRACK TYPE]" and update the current track time when playing a podcast.
+				- (Podcasts are currently not supported by neither the unofficial Spotify local APIs nor by the official web APIs, so there's no way to get the name of the podcast or the current episode!)
+			- Fixed hotkeys not resetting properly when using the Default or Default All buttons (#18).
+			- [Error logging] Most errors and exceptions are now logged to the "Toastify*.log" file located in "%LocalAppData%\Toastify". Please, include that file to any issue report related to errors, bugs or crashes.
+			- Reduced average CPU usage (#22).
+			- Fixed an issue that caused Spotify window's position and dimensions to be reset every time Toastify terminated Spotify's process (#23).
+			- Toastify shouldn't crash anymore on 32 bit versions of Windows (66f7e08, fc16caa).
+			- Minor fixes and improvements (c713a30, cdbd79e, 895a4f1, d6fbb01).
+
+		# Toastify v1.10.0 - 13/10/2017
+			- Fixed a random and occasional startup error that prevented Toastify from functioning correctly when Spotify was lauched by Toastify and Spotify happened to take too much time to start (#13).
+			- Made the Default button in the settings window work contextually based on the current opened tab. A Default All option has been added to reset all settings at once (#15).
+			- Fixed a startup error that caused the application to crash without any error message (#16).
+
+	# Toastify v1.9.8 - 16/9/2017
+		- Added visual clues to make Artist and Track names unambiguous, thanks to @Vankog 👍 (#12).
+		- Made the order of Artist and Track customizable (#11).
+		- Redesigned the Toast tab in the Settings to allow further customization of the toast itself (#9).
+		- Added a song progress bar to the toast.
+		- Added a preview of the Toast when changing the Settings.
+			- (The Save button needs to be clicked for the changes to be visible)
+		- Fixed version number and homepage url not showing up in the About window.
+		- Re-implemented data collection.
+			- (You have to opt-out again, if you already did in previous versions)
+
+		# Toastify v1.9.6 - 3/9/2017
+			- Fixed an issue with the latest version of Spotify (v1.0.62.*) (#8)
+
+		# Toastify v1.9.5 - 11/7/2017
+			- Fixed hotkeys being sometimes triggered multiple times with a single key-press.
+			- Fixed Toast behaviour with fullscreen videogames.
+				- Toastify will always try to show the Toast as the top most window; however, if it is not possible, because a fullscreen videogame is running, then the Toast will not be showed and the videogame window will always mantain the focus.
+				- This behaviour can be changed to never show the Toast if a fullscreen (standard fullscreen or 'borderless windowed' fullscreen) videogame is running.
+			- Re-added option to change system volume instead of just Spotify's (#5).
+
+		# Toastify v1.9.4 - 5/7/2017
+			- Definitely fixed error related to issue #3.
+			- Added an option to use Spotify's volume control instead of the Windows volume mixer (#4).
+			- When using the Windows volume mixer, the volume increment can now be customized.
+			- FastForward/Rewind hotkeys (and VolumeUp/VolumeDown, when using Spotify's volume control) now work as intended.
+			- Removed AutoHotkey dependency.
+
+		# Toastify v1.9.3 - 2/7/2017
+			- Toastify will automatically terminate when Spotify is closed.
+			- The toast can fade-in if a fullscreen app (e.g. a videogame) is set to windowed borderless mode.
+			- Toastify doesn't require admin privileges anymore if using the Windows Store version of Spotify.
+			- Fixed a startup error that caused Toastify to not work as intended (#3).
+			- Changed target .NET Framework to 4.5.
+
+		# Toastify v1.9.2 - 29/6/2017
+			- Fixed an error that caused the toast's song to be different from the one played.
+			- Added support for the Windows Store version of Spotify (Windows 10).
+
+		# Toastify v1.9.1 - 22/6/2017
+			- Play state is checked also when the track changes: this should prevent a random, occasional glitch causing the current track to never being updated when paused.
+			- The toast never fades in when a fullscreen application is running (e.g. a videogame): this prevents the fullscreen application to go to the background when the toast is displayed.
+
+		# Toastify v1.9.0 - 6/6/2017
+			- Changes from nachmore's v1.8.3:
+			- Using JohnnyCrazy's SpotifyAPI-NET project.
+			- The toast doesn't fade out when pressing hotkeys while it is still visible.
+			- The toast fades out immediately if the ShowToast hotkey is pressed while it is still visible.
+			- The song's title is displayed after the artist name.
+			- The toast shows correct information about the current song when paused.
+			- Upgraded to .NET Framework 4.5.2.
     # Toastify 1.8.3 - 10/3/2016
     - BUG: Toastify was no longer minimizing Spotify on startup (when the setting was set) - thanks darrenshare!
 	- Exception handling cleanup
