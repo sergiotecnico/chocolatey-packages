@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ??? doesn?t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+   <id>avirafreeantivirus</id>
+   <title>avirafreeantivirus</title>
+   <version>15.0.2008.1934</version>
+   <authors>Avira</authors>
+   <owners>sergiotecnico</owners>
+   <summary>Avira Free Antivirus offers basic protection for your computer against dangerous viruses, worms, spy-ware, trojans and costly dialers.</summary>
+   <description>Avira Free Antivirus is an award-winning Antivirus software that provides comprehensive protection against all types of threats, secures your data, protects your privacy, and ensures your PC remains virus-free. It detects 99.99% of malware. Cloud-based scanning for unparalleled security and lightning Fast Performance.</description>
+   <projectUrl>https://www.avira.com/</projectUrl>
+   <packageSourceUrl>https://github.com/sergiotecnico/chocolatey-packages/avirafreeantivirus</packageSourceUrl>
+   <tags>avira antivirus free malware notSilent</tags>
+   <copyright></copyright>
+   <licenseUrl>https://www.avira.com/en/license-agreement-terms-of-use/</licenseUrl>
+   <requireLicenseAcceptance>false</requireLicenseAcceptance>
+   <iconUrl>https://www.avira.com/apple-touch-icon.png</iconUrl>
+   <dependencies>
+     <dependency id="" version="" />
+   </dependencies>
+   <releaseNotes>
+   </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
